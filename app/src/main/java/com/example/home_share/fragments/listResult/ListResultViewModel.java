@@ -1,16 +1,16 @@
-package com.example.home_share.ui.share;
+package com.example.home_share.fragments.listResult;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ShareViewModel extends ViewModel {
+public class ListResultViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public ShareViewModel() {
+    public ListResultViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is share fragment");
+        mText.setValue("Résultat de votre recherche");
     }
 
     public LiveData<String> getText() {

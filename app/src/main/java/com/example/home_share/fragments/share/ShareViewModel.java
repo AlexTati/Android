@@ -1,23 +1,19 @@
-package com.example.home_share.ui.home;
-
-import android.os.Bundle;
+package com.example.home_share.fragments.share;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class ShareViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public ShareViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Partez à la découvert!");
+        mText.setValue("This is share fragment");
     }
 
     public LiveData<String> getText() {
         return mText;
     }
-
-
 }

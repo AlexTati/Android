@@ -1,4 +1,4 @@
-package com.example.home_share.ui.DetailsHome;
+package com.example.home_share.fragments.share;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.home_share.R;
 
-public class DetailsHomeFragment extends Fragment {
+public class ShareFragment extends Fragment {
 
-    private DetailsHomeViewModel detailsHomeViewModel;
+    private ShareViewModel shareViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        detailsHomeViewModel =
-                ViewModelProviders.of(this).get(DetailsHomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_detailshome, container, false);
-        final TextView textView = root.findViewById(R.id.text_detailsHome);
-        detailsHomeViewModel.getText().observe(this, new Observer<String>() {
+        shareViewModel =
+                ViewModelProviders.of(this).get(ShareViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_share, container, false);
+        final TextView textView = root.findViewById(R.id.text_share);
+        shareViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

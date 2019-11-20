@@ -1,16 +1,16 @@
-package com.example.home_share.ui.listResult;
+package com.example.home_share.fragments.send;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ListResultViewModel extends ViewModel {
+public class SendViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public ListResultViewModel() {
+    public SendViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Résultat de votre recherche");
+        mText.setValue("This is send fragment");
     }
 
     public LiveData<String> getText() {

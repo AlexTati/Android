@@ -1,16 +1,16 @@
-package com.example.home_share.ui.login;
+package com.example.home_share.fragments.DetailsHome;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class LoginViewModel extends ViewModel {
+public class DetailsHomeViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public LoginViewModel() {
+    public DetailsHomeViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Connectez-vous");
+        mText.setValue("Détail du logement choisi");
     }
 
     public LiveData<String> getText() {

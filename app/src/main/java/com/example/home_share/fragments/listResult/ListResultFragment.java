@@ -1,4 +1,4 @@
-package com.example.home_share.ui.listResult;
+package com.example.home_share.fragments.listResult;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

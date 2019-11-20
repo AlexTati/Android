@@ -1,4 +1,4 @@
-package com.example.home_share.ui.send;
+package com.example.home_share.fragments.DetailsHome;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.home_share.R;
 
-public class SendFragment extends Fragment {
+public class DetailsHomeFragment extends Fragment {
 
-    private SendViewModel sendViewModel;
+    private DetailsHomeViewModel detailsHomeViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        sendViewModel =
-                ViewModelProviders.of(this).get(SendViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_send, container, false);
-        final TextView textView = root.findViewById(R.id.text_send);
-        sendViewModel.getText().observe(this, new Observer<String>() {
+        detailsHomeViewModel =
+                ViewModelProviders.of(this).get(DetailsHomeViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_detailshome, container, false);
+        final TextView textView = root.findViewById(R.id.text_detailsHome);
+        detailsHomeViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

@@ -2,6 +2,7 @@ package com.example.home_share;
 
 import android.os.Bundle;
 
+import com.example.home_share.services.auth;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -36,15 +37,20 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
+
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_connexion, R.id.nav_house_details,
                 R.id.nav_result, R.id.nav_share, R.id.nav_send)
                 .setDrawerLayout(drawer)
                 .build();
+
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        //addMenuItemInNavMenuDrawer();
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -58,5 +64,22 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    private void addMenuItemInNavMenuDrawer() {
+        NavigationView navView = (NavigationView) findViewById(R.id.nav_view);
+
+        Menu menu = navView.getMenu();
+        menu.clear();
+
+        if (!auth.isLogged()){
+            menu.add("Connexion");
+        }
+        else {
+            menu.add("Se déconnecter");
+        }
+
+
+        navView.invalidate();
     }
 }
